@@ -1,0 +1,23 @@
+.CV-photo{
+    display: none;
+}
+.CV-info p{
+    display: inline-block;
+}
+.CV-info{
+    margin: 0 auto;
+}
+html{
+    font-size: 12px;
+}
+.footer{
+    display: none;
+}
+h1{
+    margin: 10px auto;
+    padding: 10px 0;
+    font-size: 25px;
+}
+.noPrint{
+    display: none;
+}
