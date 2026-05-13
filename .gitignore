@@ -2,6 +2,7 @@
 Gruntfile.js
 /node_modules
 /resources
+/dist
 
 # Système
 .DS_Store

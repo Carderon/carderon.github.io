@@ -1,168 +1,256 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cédric Gillis — Consultant technique / Développeur front-end</title>
+    <meta
+      name="description"
+      content="Consultant technique et développeur front-end (Vue.js, React), compétences backend PHP/Laravel et Node.js."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cédric Gillis - Webdeveloper</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic|Playfair+Display:400,400italic" rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print">
-    <link rel="image_src" href="assets/img/cedricgillis.png" />
-</head>
-
-<body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <section class="CV">
-        <figure class="CV-photo">
-            <img src="assets/img/cedricgillis.png" />
+    <link rel="stylesheet" href="./src/styles/main.css">
+  </head>
+  <body>
+    <div class="cv">
+      <aside class="cv__sidebar" aria-label="Coordonnées et compétences">
+        <figure class="cv__photo">
+          <img
+            src="./src/img/cedricgillis.png"
+            width="320"
+            height="320"
+            alt="Photo de Cédric Gillis"
+            decoding="async"
+          />
         </figure>
 
-        <h1>
-            Cédric Gillis
-            <span class="h1-subtitle">Webdeveloper</span>
-        </h1>
+        <section class="cv-block">
+          <h2 class="cv-block__title">Contact</h2>
+          <ul class="cv-contact">
+            <li>
+              <span class="cv-contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M4 4h16v16H4z" stroke-linejoin="round" />
+                  <path d="m4 7 8 5 8-5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <a href="mailto:cedric.l.gillis@gmail.com">cedric.l.gillis@gmail.com</a>
+            </li>
+            <li>
+              <span class="cv-contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M12 21s-7-4.5-7-11a7 7 0 1 1 14 0c0 6.5-7 11-7 11z" stroke-linejoin="round" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </span>
+              <span>Région de Liège</span>
+            </li>
+          </ul>
+        </section>
 
-        <div class="CV-info">
-            <p><i class="fa fa-user"></i>Résidant à Liège, Belgique</p>
-            <p><i class="fa fa-cake"></i>Né le 22 février 1989</i></p>
-            <p><i class="fa fa-envelope"></i><a class="link" href="mailto:cedric.l.gillis@gmail.com">cedric.l.gillis@gmail.com</a></p>
-        </div>
-
-        <div class="wrapper print">
-            <article>
-                <h2>Parcours</h2>
-                
-                <div>
-                    <h3><i class="fa fa-suitcase"></i> Emplois</h3>
-                    <ul class="CV-list">
-                        <li class="CV-list__item">
-                            <strong>Déc. 2018 - Jui. 2020</strong>
-                            <p>Lead WebDev @ Tacite</p>
-                        </li>
-                        <li class="CV-list__item">
-                            <strong>Aoû. 2017 - Déc. 2018</strong>
-                            <p>Développeur Frontend @ Referencefitness</p>
-                        </li>
-                        <li class="CV-list__item">
-                            <strong>Oct. 2016 - Juil. 2017</strong>
-                            <p>Développeur web @ Knok Design</p>
-                        </li>
-                        <li class="CV-list__item">
-                            <strong>Jan. 2016 - Sep. 2016</strong>
-                            <p>Développeur web freelance</p>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3><i class="fa fa-university"></i> Études</h3>
-                    <ul class="CV-list">
-                        <li class="CV-list__item">
-                            <strong>2012-15</strong>
-                            <p>Bachelier Techniques Infographiques (orientation web) à la HEPL (INPRES)</p>
-                        </li>
-                        <li class="CV-list__item">
-                            <strong>2011-12</strong>
-                            <p>Webmaster - 1<sup>e</sup> année à St-Laurent promotion sociale cours du soir</p>
-                        </li>
-                        <li class="CV-list__item">
-                            <strong>2010-11</strong>
-                            <p>Biochimie - 1<sup>e</sup> année à la HEPL (ISIL)</p>
-                        </li>
-                        <li class="CV-list__item">
-                            <strong>2008-10</strong>
-                            <p>Sciences Industrielles - 1<sup>e</sup> année à HEPL (ISIL)</p>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3><i class="fa fa-heart"></i> Passions</h3>
-                    <ul>
-                        <li>Jeu de rôle grandeur nature</li>
-                        <li>Escrime</li>
-                        <li>Café</li>
-                    </ul>                    
-                </div>
-            </article>
-            <article>
-                <h2>Compétences</h2>
-                <div class="flex -row">
-                    <div class="flex -col -one">
-                        <h3><i class="fa fa-code"></i> Langages</h3>
-                        <ul>
-                            <li>PHP 7.*</li>
-                            <li>JS : ES6</li>
-                            <li>HTML & CSS : HTML5, CSS3, SASS, Stylus, Less</li>
-                        </ul>
-                        <h3><i class="fa fa-cogs"></i> Framework</h3>
-                        <ul>
-                            <li>PHP : Laravel</li>
-                            <li>JS : VueJS, ReactJS</li>
-                        </ul>
-                    </div>
-                    <div class="flex -col -one">
-                        <h3><i class="fa fa-wrench"></i> Outils</h3>
-                        <ul>
-                            <li>Adobe : Photoshop, Illustrator, InDesign</li>
-                            <li>Éditeur de texte : Atom</li>
-                            <li>Taskrunners : Webpack</li>
-                            <li>Autres : Git</li>
-                        </ul>
-                        <h3><i class="fa fa-comment"></i> Langues</h3>
-                        <ul>
-                            <li>Français : langue maternelle</li>
-                            <li>Anglais : technique, conversation courante</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <div class="wrapper noPrint">
-            <h2>Créations</h2>
-            <div class="creations">
-                <a href="http://ordredutore.be" class="creations-item link" target="_blank">
-                    <figure>
-                        <img src="assets/img/ordredutore.be.jpg" alt="">
-                        <figcaption>Ordre du Torè</figcaption>
-                    </figure>
-                </a>
-                <a href="https://tacite.be" class="creations-item link" target="_blank">
-                    <figure>
-                        <img src="assets/img/tacite.be.png" alt="">
-                        <figcaption>Tacite, l'Allié des Artistes</figcaption>
-                    </figure>
-                </a>
-                <a href="https://ragnaroklarp.be" class="creations-item link" target="_blank">
-                    <figure>
-                        <img src="assets/img/ragnaroklarp.be.jpg" alt="">
-                        <figcaption>Ragnarok (larp)</figcaption>
-                    </figure>
-                </a>
+        <section class="cv-block">
+          <h2 class="cv-block__title">Compétences</h2>
+          <div class="cv-skills" role="presentation">
+            <div class="cv-skills__col">
+              <h3 class="cv-skills__heading">Front-end</h3>
+              <ul>
+                <li>Nuxt</li>
+                <li>TypeScript</li>
+                <li>Javascript</li>
+                <li>Tailwind CSS</li>
+                <li>Vue 2/3</li>
+                <li>PWA</li>
+              </ul>
             </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <a class="link" href="https://github.com/Carderon" target="_blank">
-            <i class="fa fa-github-square"></i>
-            <span>Dépôts Github</span>
-        </a>
-    </footer>
-</body>
+            <div class="cv-skills__col">
+              <h3 class="cv-skills__heading">Back-end</h3>
+              <ul>
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>MySQL</li>
+                <li>API REST</li>
+              </ul>
+            </div>
+            <div class="cv-skills__col">
+              <h3 class="cv-skills__heading">Mobile</h3>
+              <ul>
+                <li>Ionic</li>
+                <li>Capacitor</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
+        <section class="cv-block">
+          <h2 class="cv-block__title">Certification</h2>
+          <p class="cv-block__muted">—</p>
+        </section>
+
+        <section class="cv-block">
+          <h2 class="cv-block__title">Liens utiles</h2>
+          <p>
+            <a href="https://carderon.github.io" class="cv-link" rel="me">https://carderon.github.io</a>
+          </p>
+        </section>
+
+        <section class="cv-block">
+          <h2 class="cv-block__title">Langues</h2>
+          <ul class="cv-list-plain">
+            <li>Français (langue maternelle)</li>
+            <li>Anglais (B2)</li>
+          </ul>
+        </section>
+
+        <section class="cv-block cv-block--bordered-top">
+          <p class="cv-formations">
+            Bachelier en Techniques<br />
+            Graphiques&nbsp;—&nbsp;Option Web<br />
+            HEPL&nbsp;‑&nbsp;InPrES (Seraing),<br />
+            2012&nbsp;‑&nbsp;2015
+          </p>
+        </section>
+      </aside>
+
+      <main class="cv__main" id="main">
+        <header class="cv-hero">
+          <div class="cv-hero__stack">
+            <p class="cv-hero__lastname-line">Gillis</p>
+            <p class="cv-hero__firstname-line">Cédric</p>
+          </div>
+          <p class="cv-hero__role">Consultant technique /</p>
+          <p class="cv-hero__role cv-hero__role--accent">Développeur front‑end</p>
+          <p class="cv-hero__kicker">Vue.js</p>
+          <div class="cv-intro">
+            <p>
+              Spécialisé en frontend (Vue.js) avec de bonnes compétences en backend (PHP/Laravel,
+              Node.js), je conçois des applications robustes, maintenables et orientées utilisateur.
+            </p>
+            <p>
+              Curieux, autonome et polyvalent, je m’adapte rapidement aux différents challenges et besoins client.
+            </p>
+          </div>
+        </header>
+
+        <section class="cv-missions">
+          <h2 class="cv-missions__title">Quelques missions</h2>
+
+          <article class="cv-mission">
+            <h3 class="cv-mission__head">
+              <span class="cv-mission__org">Huggy’s Bar</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label">Plateforme de gestion de stock et d’audit</span>
+            </h3>
+            <ul>
+              <li>Développement frontend Vue.js</li>
+              <li>Système d’authentification avec Sanctum et Fortify</li>
+              <li>Architecture et développement d’un générateur de formulaire dynamique pour audit</li>
+            </ul>
+          </article>
+
+          <article class="cv-mission">
+            <h3 class="cv-mission__head">
+              <span class="cv-mission__org">Helmo Paramédical</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label">
+                Plateforme de simulation hospitalière virtuelle intégrant des contenus interactifs H5P pour la
+                formation médicale (serious game)
+              </span>
+            </h3>
+            <ul>
+              <li>Développement frontend Vue.js</li>
+              <li>Système d’authentification avec Sanctum et Fortify</li>
+            </ul>
+          </article>
+
+          <article class="cv-mission">
+            <h3 class="cv-mission__head">
+              <span class="cv-mission__org">Miysis</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label">Plateforme de présentation de projets immobiliers</span>
+            </h3>
+            <ul>
+              <li>Développement d’un générateur de maquettes orbitales 360°</li>
+              <li>Mise en place de visite VR sur base de KRPano</li>
+            </ul>
+          </article>
+
+          <article class="cv-mission">
+            <h3 class="cv-mission__head">
+              <span class="cv-mission__org">Armarius</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label">CMS sur mesure pour Epekta</span>
+            </h3>
+            <ul>
+              <li>Développement d’un CMS orienté développeur</li>
+              <li>Mise en place de PrimeVue</li>
+              <li>Mise en place de Vite</li>
+              <li>Mise en place de Pinia avec store modulaire</li>
+            </ul>
+          </article>
+
+          <article class="cv-mission">
+            <h3 class="cv-mission__head">
+              <span class="cv-mission__org">Ophtime</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label">Outil de gestion d’horaire pour la Citadelle de Liège</span>
+            </h3>
+            <ul>
+              <li>Outil de gestion d’horaire et de garde pour le service ophtalmo de la Citadelle</li>
+              <li>
+                Calendrier dynamique et responsive pour l’ajout et la suppression des congés, gardes et horaires de
+                travail
+              </li>
+            </ul>
+          </article>
+
+          <article class="cv-mission">
+            <h3 class="cv-mission__head">
+              <span class="cv-mission__org">Les Congressistes</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label">
+                Congrès internationaux, masterclass et webinaires pour le domaine dentaire
+              </span>
+            </h3>
+            <ul>
+              <li>Intégration et mise en page de l’outil de réservation des congrès</li>
+            </ul>
+          </article>
+
+          <article class="cv-mission">
+            <h3 class="cv-mission__head">
+              <span class="cv-mission__org">Mattéco</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label">Site vitrine pour du coaching et de la facilitation en entreprise</span>
+            </h3>
+            <ul>
+              <li>Intégration responsive</li>
+              <li>Développement front‑end</li>
+            </ul>
+          </article>
+
+          <article class="cv-mission cv-mission--last">
+            <h3 class="cv-mission__head">
+              <span class="cv-mission__org">Tacite</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label">Plateforme de facturation des artistes</span>
+            </h3>
+            <ul>
+              <li>Facturation, mise sous contrat, récupération de créances, valorisation de droits voisins</li>
+              <li>Catalogue à l’usage des organisateurs</li>
+            </ul>
+          </article>
+        </section>
+
+        <footer class="cv-footer cv-footer--no-print">
+          <a href="https://github.com/Carderon" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </main>
+    </div>
+  </body>
 </html>
