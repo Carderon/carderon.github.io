@@ -1,0 +1,69 @@
+# Publie le site Pages en une seule arborescence :
+# - racine : sortie du build Vite du dépôt (CV)
+# - /map     : fichiers statiques versionnés
+# - /famidle : sortie du build Vite du projet famidle (base /famidle/)
+#
+# Réglages dépôt : Settings → Pages → Build and deployment → Source : GitHub Actions
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            famidle/package-lock.json
+
+      - name: Build site root (Vite)
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build Famidle
+        working-directory: famidle
+        run: |
+          npm ci
+          npm run build-only
+
+      - name: Assemble GitHub Pages output
+        run: |
+          mkdir -p _site
+          rsync -a dist/ _site/
+          rsync -a map/ _site/map/
+          mkdir -p _site/famidle
+          rsync -a famidle/dist/ _site/famidle/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
