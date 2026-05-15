@@ -314,6 +314,71 @@ body {
   li + li {
     margin-top: 0.3rem;
   }
+
+  a {
+    color: var(--cv-accent);
+    text-underline-offset: 0.14em;
+
+    &:hover {
+      color: #a33f28;
+    }
+  }
+}
+
+.cv-project-demo {
+  margin-top: 0.85rem;
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--cv-border);
+    background: #fff;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      border-color: var(--cv-accent);
+      box-shadow: 0 4px 16px rgba(31, 36, 40, 0.08);
+
+      .cv-project-demo__caption {
+        color: var(--cv-accent);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--cv-accent);
+      outline-offset: 2px;
+    }
+  }
+
+  &__screen {
+    display: block;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    max-height: 220px;
+    background: #e8eef2;
+    pointer-events: none;
+
+    iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+
+  &__caption {
+    display: block;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--cv-muted);
+    border-top: 1px solid var(--cv-border);
+    transition: color 0.15s ease;
+  }
 }
 
 .cv-footer {
