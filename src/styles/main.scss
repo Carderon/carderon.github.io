@@ -60,6 +60,10 @@ body {
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:not(:has(img)) {
+    display: none;
+  }
 }
 
 .cv__photo img {
@@ -381,6 +385,40 @@ body {
   }
 }
 
+.cv-print-bar {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  button {
+    font-family: var(--cv-font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--cv-border);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--cv-main-text);
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(31, 36, 40, 0.08);
+
+    &:hover {
+      border-color: var(--cv-accent);
+      color: var(--cv-accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--cv-accent);
+      outline-offset: 2px;
+    }
+  }
+}
+
 .cv-footer {
   margin-top: 2.75rem;
 
@@ -424,50 +462,205 @@ body {
 }
 
 @media print {
+  :root {
+    --cv-print-margin-top: 10mm;
+    --cv-print-margin-right: 11mm;
+    --cv-print-margin-bottom: 10mm;
+    --cv-print-margin-left: 11mm;
+    --cv-print-sidebar: 62mm;
+    --cv-print-gutter: 5mm;
+  }
+
   @page {
-    margin: 12mm;
     size: A4 portrait;
+    margin: var(--cv-print-margin-top) var(--cv-print-margin-right)
+      var(--cv-print-margin-bottom) var(--cv-print-margin-left);
+  }
+
+  html {
+    font-size: 10pt;
   }
 
   body {
-    background: #fff;
-    font-size: 11pt;
-    line-height: 1.45;
+    margin: 0;
+    background: #fff !important;
+    font-size: 9.75pt;
+    line-height: 1.38;
+    color: var(--cv-main-text);
   }
 
-  .cv {
-    display: grid;
-    grid-template-columns: 31% 1fr;
-    min-height: auto;
-  }
-
-  .cv__sidebar {
-    flex: unset;
+  .cv,
+  .cv * {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
-    padding: 0 14px 0 0;
   }
 
-  .cv__main {
-    background: none;
-    padding: 0 0 0 18px;
-  }
-
-  .cv__photo {
-    display: none;
-  }
-
+  .cv-print-bar,
   .cv-footer--no-print {
     display: none !important;
   }
 
+  .cv {
+    display: block;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .cv__sidebar {
+    position: fixed;
+    top: var(--cv-print-margin-top);
+    left: var(--cv-print-margin-left);
+    bottom: var(--cv-print-margin-bottom);
+    width: var(--cv-print-sidebar);
+    height: auto;
+    margin: 0;
+    padding: 3mm 2.5mm 0 3mm;
+    box-sizing: border-box;
+    flex: none;
+    background: var(--cv-sidebar-bg) !important;
+    color: var(--cv-sidebar-fg);
+  }
+
+  .cv__main {
+    margin: var(--cv-print-margin-top) var(--cv-print-margin-right)
+      var(--cv-print-margin-bottom)
+      calc(
+        var(--cv-print-margin-left) + var(--cv-print-sidebar) + var(--cv-print-gutter)
+      );
+    padding: 0;
+    background: none !important;
+    min-width: 0;
+  }
+
+  .cv__photo {
+    display: none !important;
+    margin: 0;
+  }
+
+  .cv-block {
+    margin-bottom: 0.85rem;
+  }
+
+  .cv-block__title {
+    font-size: 9.5pt;
+    margin-bottom: 0.4rem;
+  }
+
+  .cv-contact {
+    font-size: 8.75pt;
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+  }
+
+  .cv-contact a,
+  .cv-link {
+    color: var(--cv-sidebar-fg);
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+  }
+
+  .cv-skills {
+    gap: 0.35rem 0.5rem;
+
+    ul {
+      font-size: 8.25pt;
+      line-height: 1.35;
+    }
+
+    li + li {
+      margin-top: 0.2rem;
+    }
+  }
+
+  .cv-skills__heading {
+    font-size: 8.25pt;
+    margin-bottom: 0.25rem;
+  }
+
+  .cv-list-plain,
+  .cv-formations {
+    font-size: 8.5pt;
+  }
+
+  .cv-block--bordered-top {
+    margin-top: 0.65rem;
+    padding-top: 0.65rem;
+  }
+
+  .cv-hero {
+    padding-bottom: 0.85rem;
+    margin-bottom: 0.85rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv-hero__stack {
+    margin-bottom: 0.45rem;
+  }
+
+  .cv-hero__lastname-line {
+    font-size: 28pt;
+    line-height: 0.92;
+  }
+
+  .cv-hero__firstname-line {
+    font-size: 14pt;
+    margin-top: 0.08rem;
+  }
+
+  .cv-hero__role {
+    font-size: 10pt;
+    margin-top: 0.15rem;
+  }
+
   .cv-hero__kicker {
-    margin-bottom: 1rem;
+    font-size: 18pt;
+    letter-spacing: 0.12em;
+    margin: 0.2rem 0 0.65rem;
+  }
+
+  .cv-intro p {
+    font-size: 9.25pt;
+    line-height: 1.4;
+    color: var(--cv-muted);
+
+    + p {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .cv-missions__title {
+    font-size: 13pt;
+    margin-bottom: 0.65rem;
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   .cv-mission {
+    margin-bottom: 0.65rem;
     break-inside: avoid;
     page-break-inside: avoid;
-    margin-bottom: 0.9rem;
+
+    &__head {
+      font-size: 9.5pt;
+      line-height: 1.25;
+      margin-bottom: 0.3rem;
+    }
+
+    ul {
+      font-size: 9pt;
+      padding-left: 0.85rem;
+    }
+
+    li + li {
+      margin-top: 0.15rem;
+    }
+
+    a {
+      color: var(--cv-accent);
+      text-decoration: underline;
+    }
   }
 }
