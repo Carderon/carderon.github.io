@@ -16,9 +16,13 @@
     background-image: none !important;
   }
   body.cv--ats .cv {
-    display: block;
+    display: flex;
+    flex-direction: column;
     min-height: auto;
     width: 100%;
+  }
+  body.cv--ats .cv__main {
+    order: -1;
   }
   body.cv--ats .cv__sidebar,
   body.cv--ats .cv__main {
