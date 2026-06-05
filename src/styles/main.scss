@@ -176,6 +176,26 @@ body {
   }
 }
 
+.cv-vue-expertise,
+.cv-immersive-expertise {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--cv-sidebar-muted);
+
+  li + li {
+    margin-top: 0.35rem;
+  }
+
+  li::before {
+    content: "•";
+    margin-right: 0.45rem;
+    color: var(--cv-accent);
+  }
+}
+
 .cv-list-plain {
   list-style: none;
   margin: 0;
@@ -269,6 +289,57 @@ body {
   }
 }
 
+.cv-highlights {
+  margin: 1.75rem 0 2rem;
+
+  &__title {
+    margin: 0 0 0.75rem;
+    font-family: var(--cv-font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    font-size: 0.9375rem;
+    color: var(--cv-main-text);
+
+    li {
+      display: flex;
+      align-items: baseline;
+      column-gap: 0.4rem;
+    }
+
+    strong {
+      font-family: var(--cv-font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cv-accent);
+      white-space: nowrap;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 1rem;
+    font-size: 0.9375rem;
+    color: var(--cv-muted);
+
+    li + li {
+      margin-top: 0.25rem;
+    }
+  }
+}
+
 .cv-missions__title {
   margin: 0 0 1.25rem;
   font-family: var(--cv-font-display);
@@ -306,6 +377,31 @@ body {
 
   &__label {
     font-weight: 600;
+  }
+
+  &__context {
+    margin: 0 0 0.35rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--cv-muted);
+    font-style: italic;
+  }
+
+  &__stack {
+    margin: 0 0 0.5rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--cv-muted);
+  }
+
+  &__stack-label {
+    font-family: var(--cv-font-display);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cv-main-text);
+    margin-right: 0.35rem;
   }
 
   ul {
@@ -390,6 +486,8 @@ body {
   top: 0.75rem;
   right: 0.75rem;
   z-index: 10;
+  display: flex;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -477,11 +575,7 @@ body {
       var(--cv-print-margin-bottom) var(--cv-print-margin-left);
   }
 
-  html {
-    font-size: 10pt;
-  }
-
-  body {
+  body:not(.cv--ats) {
     margin: 0;
     background: #fff !important;
     font-size: 9.75pt;
@@ -489,8 +583,12 @@ body {
     color: var(--cv-main-text);
   }
 
-  .cv,
-  .cv * {
+  body:not(.cv--ats) html {
+    font-size: 10pt;
+  }
+
+  body:not(.cv--ats) .cv,
+  body:not(.cv--ats) .cv * {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
@@ -500,13 +598,13 @@ body {
     display: none !important;
   }
 
-  .cv {
+  body:not(.cv--ats) .cv {
     display: block;
     min-height: auto;
     width: 100%;
   }
 
-  .cv__sidebar {
+  body:not(.cv--ats) .cv__sidebar {
     position: fixed;
     top: var(--cv-print-margin-top);
     left: var(--cv-print-margin-left);
@@ -521,7 +619,7 @@ body {
     color: var(--cv-sidebar-fg);
   }
 
-  .cv__main {
+  body:not(.cv--ats) .cv__main {
     margin: var(--cv-print-margin-top) var(--cv-print-margin-right)
       var(--cv-print-margin-bottom)
       calc(
@@ -532,21 +630,21 @@ body {
     min-width: 0;
   }
 
-  .cv__photo {
+  body:not(.cv--ats) .cv__photo {
     display: none !important;
     margin: 0;
   }
 
-  .cv-block {
+  body:not(.cv--ats) .cv-block {
     margin-bottom: 0.85rem;
   }
 
-  .cv-block__title {
+  body:not(.cv--ats) .cv-block__title {
     font-size: 9.5pt;
     margin-bottom: 0.4rem;
   }
 
-  .cv-contact {
+  body:not(.cv--ats) .cv-contact {
     font-size: 8.75pt;
 
     li {
@@ -554,14 +652,14 @@ body {
     }
   }
 
-  .cv-contact a,
-  .cv-link {
+  body:not(.cv--ats) .cv-contact a,
+  body:not(.cv--ats) .cv-link {
     color: var(--cv-sidebar-fg);
     text-decoration: underline;
     text-underline-offset: 0.12em;
   }
 
-  .cv-skills {
+  body:not(.cv--ats) .cv-skills {
     gap: 0.35rem 0.5rem;
 
     ul {
@@ -574,54 +672,56 @@ body {
     }
   }
 
-  .cv-skills__heading {
+  body:not(.cv--ats) .cv-skills__heading {
     font-size: 8.25pt;
     margin-bottom: 0.25rem;
   }
 
-  .cv-list-plain,
-  .cv-formations {
+  body:not(.cv--ats) .cv-vue-expertise,
+  body:not(.cv--ats) .cv-immersive-expertise,
+  body:not(.cv--ats) .cv-list-plain,
+  body:not(.cv--ats) .cv-formations {
     font-size: 8.5pt;
   }
 
-  .cv-block--bordered-top {
+  body:not(.cv--ats) .cv-block--bordered-top {
     margin-top: 0.65rem;
     padding-top: 0.65rem;
   }
 
-  .cv-hero {
+  body:not(.cv--ats) .cv-hero {
     padding-bottom: 0.85rem;
     margin-bottom: 0.85rem;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .cv-hero__stack {
+  body:not(.cv--ats) .cv-hero__stack {
     margin-bottom: 0.45rem;
   }
 
-  .cv-hero__lastname-line {
+  body:not(.cv--ats) .cv-hero__lastname-line {
     font-size: 28pt;
     line-height: 0.92;
   }
 
-  .cv-hero__firstname-line {
+  body:not(.cv--ats) .cv-hero__firstname-line {
     font-size: 14pt;
     margin-top: 0.08rem;
   }
 
-  .cv-hero__role {
+  body:not(.cv--ats) .cv-hero__role {
     font-size: 10pt;
     margin-top: 0.15rem;
   }
 
-  .cv-hero__kicker {
+  body:not(.cv--ats) .cv-hero__kicker {
     font-size: 18pt;
     letter-spacing: 0.12em;
     margin: 0.2rem 0 0.65rem;
   }
 
-  .cv-intro p {
+  body:not(.cv--ats) .cv-intro p {
     font-size: 9.25pt;
     line-height: 1.4;
     color: var(--cv-muted);
@@ -631,14 +731,14 @@ body {
     }
   }
 
-  .cv-missions__title {
+  body:not(.cv--ats) .cv-missions__title {
     font-size: 13pt;
     margin-bottom: 0.65rem;
     break-after: avoid;
     page-break-after: avoid;
   }
 
-  .cv-mission {
+  body:not(.cv--ats) .cv-mission {
     margin-bottom: 0.65rem;
     break-inside: avoid;
     page-break-inside: avoid;
@@ -646,7 +746,21 @@ body {
     &__head {
       font-size: 9.5pt;
       line-height: 1.25;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    &__context {
+      font-size: 8.75pt;
+      margin-bottom: 0.2rem;
+    }
+
+    &__stack {
+      font-size: 8pt;
+      margin-bottom: 0.35rem;
+    }
+
+    &__stack-label {
+      font-size: 7.5pt;
     }
 
     ul {

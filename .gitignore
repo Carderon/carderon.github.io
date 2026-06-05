@@ -22,5 +22,5 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Outils / IDE (optionnel — à adapter si vous versionnez du tooling IDE)
+# Outils / IDE (optionnel - à adapter si vous versionnez du tooling IDE)
 .cursor/

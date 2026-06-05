@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cédric Gillis — Consultant technique / Développeur front-end</title>
+    <title>Cédric Gillis - Développeur front-end</title>
     <meta
       name="description"
       content="Consultant technique et développeur front-end (Vue.js, React), compétences backend PHP/Laravel et Node.js."
@@ -16,10 +16,12 @@
     />
 
     <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/ats.css">
   </head>
   <body>
     <p class="cv-print-bar">
-      <button type="button" onclick="window.print()">Enregistrer en PDF</button>
+      <button type="button" data-print-mode="human">PDF - version lisible</button>
+      <button type="button" data-print-mode="ats">PDF - version ATS</button>
     </p>
     <div class="cv">
       <aside class="cv__sidebar" aria-label="Coordonnées et compétences">
@@ -63,11 +65,11 @@
             <div class="cv-skills__col">
               <h3 class="cv-skills__heading">Front-end</h3>
               <ul>
+                <li>Vue.js</li>
                 <li>Nuxt</li>
                 <li>TypeScript</li>
                 <li>Javascript</li>
                 <li>Tailwind CSS</li>
-                <li>Vue 2/3</li>
                 <li>PWA</li>
               </ul>
             </div>
@@ -90,9 +92,29 @@
           </div>
         </section>
 
+        <section class="cv-block">
+          <h2 class="cv-block__title">Expertise Vue.js</h2>
+          <ul class="cv-vue-expertise">
+            <li>Vue 2 &amp; 3 · Composition API</li>
+            <li>Pinia · Vite · PrimeVue · Nuxt</li>
+            <li>PWA · Ionic / Capacitor</li>
+            <li>Intégration API REST / Laravel</li>
+          </ul>
+        </section>
+
+        <section class="cv-block">
+          <h2 class="cv-block__title">Expertise immersive</h2>
+          <ul class="cv-immersive-expertise">
+            <li>KRPano · visites virtuelles</li>
+            <li>Maquettes orbitales 360°</li>
+            <li>Intégration Vue.js + API REST</li>
+            <li>Immobilier · présentation de projets</li>
+          </ul>
+        </section>
+
 <!--         <section class="cv-block">
           <h2 class="cv-block__title">Certification</h2>
-          <p class="cv-block__muted">—</p>
+          <p class="cv-block__muted">-</p>
         </section> -->
 
         <section class="cv-block">
@@ -113,7 +135,7 @@
         <section class="cv-block cv-block--bordered-top">
           <p class="cv-formations">
             Bachelier en Techniques<br />
-            Graphiques&nbsp;—&nbsp;Option Web<br />
+            Graphiques&nbsp;-&nbsp;Option Web<br />
             HEPL&nbsp;‑&nbsp;InPrES (Seraing),<br />
             2012&nbsp;‑&nbsp;2015
           </p>
@@ -126,18 +148,40 @@
             <p class="cv-hero__lastname-line">Gillis</p>
             <p class="cv-hero__firstname-line">Cédric</p>
           </div>
-          <p class="cv-hero__role">Consultant technique /</p>
-          <p class="cv-hero__role cv-hero__role--accent">Développeur front‑end</p>
+          <p class="cv-hero__role">Front-End Developer</p>
+          <p class="cv-hero__role cv-hero__role--accent">Vue.js & TypeScript Specialist</p>
           <p class="cv-hero__kicker">Vue.js</p>
           <div class="cv-intro">
             <p>
-              Développeur frontend spécialisé en Vue.js avec une expérience complémentaire en backend (PHP/Laravel, Node.js), concevant des applications web robustes, maintenables et orientées utilisateur. 
+              Développeur frontend spécialisé en Vue.js avec plus de 8 années d'expérience dans la création d'applications web et mobiles.
             </p>
             <p>
-              Expérience dans le développement d'applications métiers (ERP, CRM) et de solutions sur mesure pour divers secteurs. Autonome, polyvalent et adaptable, je relève les défis techniques et les besoins clients avec honnêteté et franchise.
+              Expertise en Vue.js, TypeScript, Ionic et Tailwind CSS, complétée par des compétences backend en PHP/Laravel. Développement d'applications métiers (ERP, CRM, outils de gestion) et de solutions sur mesure intégrant des API REST et des architectures modernes.
+            </p>
+            <p>
+              Intervention sur la conception, le développement, l'optimisation des performances et la maintenance d'applications destinées aux utilisateurs finaux et aux entreprises.
             </p>
           </div>
         </header>
+
+        <section class="cv-highlights" aria-label="Éléments clés">
+          <h2 class="cv-highlights__title">Éléments clés</h2>
+
+          <ul class="cv-highlights__stats">
+            <li><strong>8+</strong> années d'expérience en développement web et mobile</li>
+            <li><strong>10+</strong> projets clients livrés (santé, immobilier, événementiel, culture…)</li>
+            <li><strong>Vue.js &amp; TypeScript</strong> au cœur des projets récents</li>
+            <li><strong>Full‑stack</strong> sur plusieurs missions (Vue.js &amp; API Laravel)</li>
+          </ul>
+
+          <ul class="cv-highlights__list">
+            <li>Générateur de formulaires dynamiques pour audits terrain (Huggy’s Bar)</li>
+            <li>Plateformes métiers avec authentification Sanctum/Fortify et API REST (Helmo, Huggy’s Bar)</li>
+            <li>Expertise KRPano : visites VR et visualisation 360° avec démo publique (Miysis)</li>
+            <li>Modernisation de stack front-end (Vite, Pinia, PrimeVue) sur un CMS sur mesure (Armarius)</li>
+            <li>Outils en production pour institutions et clients B2B (Citadelle de Liège, Les Congressistes, Tacite)</li>
+          </ul>
+        </section>
 
         <section class="cv-missions">
           <h2 class="cv-missions__title">Quelques missions</h2>
@@ -147,7 +191,16 @@
               <span class="cv-mission__org">Huggy’s Bar</span>
               <span class="cv-mission__sep"> // </span>
               <span class="cv-mission__label">Plateforme de gestion de stock et d’audit</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label"> 2025 </span>
             </h3>
+            <p class="cv-mission__context">
+              Suivi des stocks et audits qualité pour des restaurants.
+            </p>
+            <p class="cv-mission__stack">
+              <span class="cv-mission__stack-label">Stack</span>
+              Vue.js · Laravel · Sanctum · Fortify · Tailwind CSS · API REST · TypeScript
+            </p>
             <ul>
               <li>Développement frontend Vue.js</li>
               <li>Système d’authentification avec Sanctum et Fortify</li>
@@ -163,7 +216,16 @@
                 Plateforme de simulation hospitalière virtuelle intégrant des contenus interactifs H5P pour la
                 formation médicale (serious game)
               </span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label"> 2025 </span>
             </h3>
+            <p class="cv-mission__context">
+              Formation paramédicale d'étudiants par simulation hospitalière et contenus H5P.
+            </p>
+            <p class="cv-mission__stack">
+              <span class="cv-mission__stack-label">Stack</span>
+              Vue.js · TypeScript · Laravel · Sanctum · Fortify · Tailwind CSS · API REST · H5P
+            </p>
             <ul>
               <li>Développement frontend Vue.js</li>
               <li>Système d’authentification avec Sanctum et Fortify</li>
@@ -175,10 +237,19 @@
               <span class="cv-mission__org">Miysis</span>
               <span class="cv-mission__sep"> // </span>
               <span class="cv-mission__label">Plateforme de présentation de projets immobiliers</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label"> 2022 </span>
             </h3>
+            <p class="cv-mission__context">
+              Commercialisation de projets immobiliers en 360° et VR.
+            </p>
+            <p class="cv-mission__stack">
+              <span class="cv-mission__stack-label">Stack</span>
+              KRPano · Vue.js · TypeScript · API REST · Laravel · Sanctum · Fortify · Tailwind CSS
+            </p>
             <ul>
               <li>
-                Développement d’un générateur de maquettes orbitales 360° —
+                Générateur de maquettes orbitales 360° (Vue.js) -
                 <a
                   href="https://demo.infos-projet.app/fr/orbital"
                   target="_blank"
@@ -186,7 +257,7 @@
                   >démo en ligne</a
                 >
               </li>
-              <li>Mise en place de visite VR sur base de KRPano</li>
+              <li>Visites VR KRPano intégrées à la plateforme Vue.js</li>
             </ul>
           </article>
 
@@ -195,7 +266,16 @@
               <span class="cv-mission__org">Armarius</span>
               <span class="cv-mission__sep"> // </span>
               <span class="cv-mission__label">CMS sur mesure pour Epekta</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label"> 2022 </span>
             </h3>
+            <p class="cv-mission__context">
+              CMS technique pour accélérer les livraisons chez Epekta.
+            </p>
+            <p class="cv-mission__stack">
+              <span class="cv-mission__stack-label">Stack</span>
+              Vue.js · PrimeVue · Vite · Pinia · TypeScript
+            </p>
             <ul>
               <li>Développement d’un CMS orienté développeur</li>
               <li>Mise en place de PrimeVue</li>
@@ -209,7 +289,16 @@
               <span class="cv-mission__org">Ophtime</span>
               <span class="cv-mission__sep"> // </span>
               <span class="cv-mission__label">Outil de gestion d’horaire pour la Citadelle de Liège</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label"> 2025 </span>
             </h3>
+            <p class="cv-mission__context">
+              Planning des gardes et horaires au service ophtalmo de la Citadelle.
+            </p>
+            <p class="cv-mission__stack">
+              <span class="cv-mission__stack-label">Stack</span>
+              Vue.js · TypeScript · Tailwind CSS
+            </p>
             <ul>
               <li>Outil de gestion d’horaire et de garde pour le service ophtalmo de la Citadelle</li>
               <li>
@@ -226,10 +315,19 @@
               <span class="cv-mission__label">
                 Congrès internationaux, masterclass et webinaires pour le domaine dentaire
               </span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label"> 2024 </span>
             </h3>
+            <p class="cv-mission__context">
+              Inscription en ligne aux congrès et formations dentaires.
+            </p>
+            <p class="cv-mission__stack">
+              <span class="cv-mission__stack-label">Stack</span>
+              Vue.js · TypeScript · Tailwind CSS · Laravel · Sanctum · Fortify · API REST
+            </p>
             <ul>
               <li>
-                Intégration et mise en page de l’outil de réservation des congrès —
+                Intégration et mise en page de l’outil de réservation des congrès -
                 <a href="https://lescongressistes.com/" target="_blank" rel="noopener noreferrer"
                   >lescongressistes.com</a
                 >
@@ -242,10 +340,19 @@
               <span class="cv-mission__org">Mattéco</span>
               <span class="cv-mission__sep"> // </span>
               <span class="cv-mission__label">Site vitrine pour du coaching et de la facilitation en entreprise</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label"> 2023 </span>
             </h3>
+            <p class="cv-mission__context">
+              Vitrine professionnelle pour coaching et facilitation en entreprise.
+            </p>
+            <p class="cv-mission__stack">
+              <span class="cv-mission__stack-label">Stack</span>
+              HTML · CSS · JavaScript · Vue.js · TypeScript · Tailwind CSS
+            </p>
             <ul>
               <li>
-                Intégration responsive et développement front‑end —
+                Intégration responsive et développement front‑end -
                 <a href="https://matteco.be/" target="_blank" rel="noopener noreferrer">matteco.be</a>
               </li>
             </ul>
@@ -256,7 +363,16 @@
               <span class="cv-mission__org">Tacite</span>
               <span class="cv-mission__sep"> // </span>
               <span class="cv-mission__label">Plateforme de facturation des artistes</span>
+              <span class="cv-mission__sep"> // </span>
+              <span class="cv-mission__label"> 2018 - 2020 </span>
             </h3>
+            <p class="cv-mission__context">
+              Gestion contractuelle et financière des prestations artistiques.
+            </p>
+            <p class="cv-mission__stack">
+              <span class="cv-mission__stack-label">Stack</span>
+              Vue.js · Laravel · PHP · MySQL · SASS
+            </p>
             <ul>
               <li>Facturation, mise sous contrat, récupération de créances, valorisation de droits voisins</li>
               <li>Catalogue à l’usage des organisateurs</li>
@@ -269,5 +385,23 @@
         </footer>
       </main>
     </div>
+    <script>
+      (function () {
+        var printBar = document.querySelector(".cv-print-bar");
+        if (!printBar) return;
+
+        printBar.addEventListener("click", function (event) {
+          var button = event.target.closest("[data-print-mode]");
+          if (!button) return;
+
+          document.body.classList.toggle("cv--ats", button.dataset.printMode === "ats");
+          window.print();
+        });
+
+        window.addEventListener("afterprint", function () {
+          document.body.classList.remove("cv--ats");
+        });
+      })();
+    </script>
   </body>
 </html>

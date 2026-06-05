@@ -1,0 +1,193 @@
+// ATS / IA - actif uniquement à l'impression quand body.cv--ats
+// Mise en page linéaire, noir sur blanc, sans icônes ni décoration
+
+@media print {
+  body.cv--ats {
+    margin: 0;
+    background: #fff !important;
+    color: #000 !important;
+    font-family: Arial, Helvetica, "Segoe UI", sans-serif !important;
+    font-size: 11pt;
+    line-height: 1.45;
+    -webkit-font-smoothing: auto;
+  }
+
+  body.cv--ats * {
+    print-color-adjust: economy;
+    -webkit-print-color-adjust: economy;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+  }
+
+  body.cv--ats .cv {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    width: 100%;
+  }
+
+  body.cv--ats .cv__main {
+    order: -1;
+  }
+
+  body.cv--ats .cv__sidebar,
+  body.cv--ats .cv__main {
+    position: static !important;
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+    border: 0 !important;
+  }
+
+  body.cv--ats .cv__photo,
+  body.cv--ats .cv-contact__icon,
+  body.cv--ats .cv-mission__sep {
+    display: none !important;
+  }
+
+  body.cv--ats .cv-block,
+  body.cv--ats .cv-hero,
+  body.cv--ats .cv-highlights,
+  body.cv--ats .cv-missions,
+  body.cv--ats .cv-mission {
+    margin-bottom: 1rem;
+    padding: 0;
+    border: 0 !important;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  body.cv--ats .cv-block--bordered-top {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0 !important;
+  }
+
+  body.cv--ats h2,
+  body.cv--ats h3,
+  body.cv--ats .cv-block__title,
+  body.cv--ats .cv-highlights__title,
+  body.cv--ats .cv-missions__title,
+  body.cv--ats .cv-skills__heading {
+    font-family: Arial, Helvetica, "Segoe UI", sans-serif !important;
+    font-weight: 700;
+    font-size: 12pt;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #000 !important;
+    margin: 0 0 0.35rem;
+  }
+
+  body.cv--ats .cv-hero__stack {
+    margin-bottom: 0.25rem;
+  }
+
+  body.cv--ats .cv-hero__lastname-line,
+  body.cv--ats .cv-hero__firstname-line {
+    font-family: Arial, Helvetica, "Segoe UI", sans-serif !important;
+    font-size: 16pt;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #000 !important;
+    margin: 0;
+  }
+
+  body.cv--ats .cv-hero__role,
+  body.cv--ats .cv-hero__kicker {
+    font-family: Arial, Helvetica, "Segoe UI", sans-serif !important;
+    font-size: 11pt;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #000 !important;
+    margin: 0.15rem 0 0;
+  }
+
+  body.cv--ats .cv-intro p,
+  body.cv--ats .cv-mission__context,
+  body.cv--ats .cv-mission__stack,
+  body.cv--ats .cv-formations,
+  body.cv--ats p,
+  body.cv--ats li {
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #000 !important;
+    font-style: normal;
+  }
+
+  body.cv--ats .cv-mission__head,
+  body.cv--ats .cv-mission__org,
+  body.cv--ats .cv-mission__label {
+    font-family: Arial, Helvetica, "Segoe UI", sans-serif !important;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #000 !important;
+  }
+
+  body.cv--ats .cv-mission__stack-label {
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #000 !important;
+  }
+
+  body.cv--ats .cv-skills {
+    display: block;
+  }
+
+  body.cv--ats .cv-skills__col {
+    margin-bottom: 0.65rem;
+  }
+
+  body.cv--ats .cv-highlights__stats {
+    display: block;
+    margin-bottom: 0.75rem;
+    padding: 0;
+
+    li {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    strong {
+      font-weight: 700;
+      color: #000 !important;
+    }
+  }
+
+  body.cv--ats ul {
+    list-style: disc;
+    margin: 0 0 0.5rem;
+    padding-left: 1.25rem;
+  }
+
+  body.cv--ats .cv-vue-expertise li::before,
+  body.cv--ats .cv-immersive-expertise li::before,
+  body.cv--ats .cv-list-plain li::before {
+    content: none;
+  }
+
+  body.cv--ats .cv-vue-expertise,
+  body.cv--ats .cv-immersive-expertise,
+  body.cv--ats .cv-list-plain {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+
+  body.cv--ats a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  body.cv--ats .cv-contact li {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+}
