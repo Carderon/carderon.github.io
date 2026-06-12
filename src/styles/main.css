@@ -673,6 +673,18 @@ body {
     break-inside: avoid;
     page-break-inside: avoid;
   }
+  body:not(.cv--ats) .cv-highlights__stats {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  body:not(.cv--ats) .cv-highlights__stats li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+  body:not(.cv--ats) .cv-highlights__stats strong {
+    white-space: normal;
+  }
   body:not(.cv--ats) .cv-hero__stack {
     margin-bottom: 0.45rem;
   }
